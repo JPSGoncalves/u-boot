@@ -9,3 +9,8 @@ config PHY_CADENCE_TORRENT
 	depends on DM_RESET
 	help
 	  Enable this to support the Cadence Torrent PHY driver
+
+config PHY_CADENCE_NXP_SALVO
+	tristate "Cadence NXP Salvo PHY Driver"
+	help
+	  Enable this to support the Cadence NXP SALVO PHY driver used on IMX8QM/X  devices.
