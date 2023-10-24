@@ -359,6 +359,9 @@ static int cnds_salvo_phy_probe(struct udevice *dev)
 	if (!priv->base)
 		return -EINVAL;
 
+	printf("Phy driver probed: base 0x%0lX, data: %lu, clk id: %lu\n", 
+		(ulong)priv->base, dev_get_driver_data(dev), priv->phy_clk->id);
+
 	return 0;
 }
 

@@ -18,6 +18,7 @@
 #include <env.h>
 #include <errno.h>
 #include <linux/libfdt.h>
+#include <dm/uclass.h>
 
 #include "../common/tdx-cfg-block.h"
 
@@ -153,6 +154,13 @@ int board_late_init(void)
 	env_set("board_name", "Colibri iMX8QXP");
 	env_set("board_rev", "v1.0");
 #endif
-
+   
+#ifdef CONFIG_PHY_CADENCE_NXP_SALVO
+	int ret = uclass_probe_all(UCLASS_PHY);
+	if(ret != 0)
+	{
+		printf("Uclass Phy Probe Fail: %d\n", ret);
+	}
+#endif
 	return 0;
 }
