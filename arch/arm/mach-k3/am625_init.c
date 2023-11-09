@@ -210,6 +210,10 @@ void board_init_f(ulong dummy)
 			panic("DRAM init failed: %d\n", ret);
 	}
 	spl_enable_dcache();
+
+	if (!IS_ENABLED(CONFIG_CPU_V7R) && !IS_ENABLED(CONFIG_SYS_ICACHE_OFF)) {
+		icache_enable();
+	}
 }
 
 u32 spl_mmc_boot_mode(struct mmc *mmc, const u32 boot_device)
