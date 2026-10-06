@@ -1,4 +1,4 @@
-if TARGET_MILKV_DUO_256M
+if TARGET_MILKV_DUO_256M || TARGET_MILKV_DUO_S
 
 config SYS_BOARD
 	default "milkv_duo_256m"
