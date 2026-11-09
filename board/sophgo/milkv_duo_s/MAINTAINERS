@@ -4,4 +4,5 @@ M:	Hiago De Franco <hfranco@baylibre.com>
 S:	Maintained
 F:	board/sophgo/milkv_duo_s/
 F:	configs/milkv_duo_s_defconfig
+F:	doc/board/sophgo/milkv_duo_s.rst
 F:	include/configs/milkv_duo_s.h
